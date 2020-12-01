@@ -3,7 +3,7 @@ import { Button, Form, Modal } from 'react-bootstrap'
 
 import { useContacts } from '../../Contexts/ContactsProvider'
 
-const ContactsModal = () => {
+const ContactsModal = ({ closeModal }) => {
     const idRef = useRef();
     const nameRef = useRef();
 
@@ -12,7 +12,7 @@ const ContactsModal = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         createContact(idRef.current.value, nameRef.current.value)
-        // CloseModal()
+        closeModal()
     }
 
     return (
